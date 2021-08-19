@@ -1,5 +1,6 @@
 body{
     font-family: 'Inter', sans-serif;
+    font-size: 14px;
 }
 .dark{
     background-color: #232326;
@@ -8,12 +9,24 @@ body{
 .dark .nav-link{
     color:#F3F2F0;
 }
+.dark .circle circle{
+    fill: #D40000;
+}
+.dark .triangle path{
+    fill: #fff;
+}
 .light{
     background-color:#F3F2F0;
     color: #010101;
 }
 .light .nav-link{
     color:#010101;
+}
+.light .circle circle{
+    fill: #fff;
+}
+.light .triangle path{
+    fill: #D40000;
 }
 /*навигация*/
 header{
@@ -35,6 +48,22 @@ header{
 .nav-link:hover{
 color: #D40000;
 } 
+.nav-info .nav-item{
+    position: relative;
+}
+.nav-info .nav-item::before{
+    content: '';
+    display: block;
+    width: 1px;
+    height: 24px;
+    background-color:rgba(243, 242, 240, 0.5);
+    position: absolute;
+    left: 0;
+    top: calc(50% - 12px);
+}
+.nav-info .nav-item:first-child::before{
+    display: none;
+}
 .nav-item{
     padding-left: 16px;
     padding-right: 16px;
@@ -54,12 +83,117 @@ padding-right: 15px;
 }
 .name{
     font-size: 28px;
+    position: relative;
+    z-index: 3;
+    
+}
+.main .title-h1{
+    position: relative;
+    z-index: 4;
+}
+.main{
+    position: relative;
 }
 .title-h1{
     font-size: 74px;
     text-transform: uppercase;
 }
+.title-h3{
+    font-size: 16px;
+    font-weight: 700;
+}
 .photo{
     margin-bottom: 120px;
     width: 100%;
 }
+.social{
+   display: flex; 
+   justify-content: space-between;
+   padding-bottom: 60px;
+   margin-top: 100px;
+}
+.social-item:last-child{
+    position: relative;
+}
+.project{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+.project-img{
+    width: 16px;
+    height: 12px;
+    display: block;
+    background-image:url(../img/Arrow.svg);
+    margin-left: 15px;
+}
+.skill{
+    display: flex;
+    justify-content: space-between;
+}
+.skill-item{
+    flex: 0 0 24%;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.skill-item:last-child{
+    padding-right: 0;
+}
+.skill-item:first-child{
+    padding-left: 0;
+}
+.skill .title-h3{
+    text-transform: uppercase;
+}
+.skill .description{
+    opacity: 0.8;
+    line-height: 150%;
+    font-weight: 400;
+ }
+ /*круг, треугольник*/
+ .circle-main{
+     width: 253px;
+     height: 253px;
+     position: absolute;
+     left: 0;
+     top: 0;
+     z-index: 1;
+     left: -128px;
+     top: calc(50% - 126px);
+ }
+ .circle-nav{
+     width: 106px;
+     height: 106px;
+     position: absolute;
+     right: 36px;
+     top: calc(50% - 53px);
+ }
+ .triangle{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    left: -151px;
+ }
+ .steps-item{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     line-height: 150%;
+ }
+ .steps-title{
+     font-size: 28px;
+     
+ }
+ .steps-title span{
+     margin-right: 45px;
+ }
+ .steps-description{
+     font-size: 16px;
+ }
+ .section-steps{
+     padding-top: 180px;
+     padding-bottom: 198px;
+ }
